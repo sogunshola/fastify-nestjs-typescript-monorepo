@@ -1,5 +1,4 @@
 import { IStorage } from './IStorage';
-import { Express } from 'express';
 
 export class CloudStorage {
   constructor(private readonly storage: IStorage) {}

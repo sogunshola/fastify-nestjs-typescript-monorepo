@@ -114,15 +114,6 @@ export class Helper {
     return currencies[currency];
   }
 
-  // static async cloudinaryUpload(file: Express.Multer.File, options?: Record<string, unknown>) {
-  //   const storage = new CloudStorage(new Cloudinary());
-  //   const folder = isProd() ? 'production' : 'development';
-  //   options.folder = `${folder}/${options.folder}`;
-  //   const { path } = file;
-  //   const fileUrl = await storage.uploadFile(path, undefined, options);
-  //   return fileUrl;
-  // }
-
   static formatDate(date: Date, format = 'YYYY-MM-DD') {
     return dayjs(date).format(format);
   }

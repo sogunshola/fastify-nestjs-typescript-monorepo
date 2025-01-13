@@ -46,7 +46,7 @@ async function bootstrap() {
   app.enableCors();
 
   await app.register(multipart);
-  await app.listen(env.port || 3000);
+  await app.listen(env.port || 3000, '0.0.0.0');
   console.log(
     `Application is running on: localhost:${env.port || 3000}. \nSwagger documentation is available at: localhost:${env.port || 3000}/swagger`,
   );

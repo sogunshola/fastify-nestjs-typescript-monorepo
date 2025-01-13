@@ -1,6 +1,7 @@
 import slugify from 'slugify';
 import { faker } from '@faker-js/faker';
-import bcrypt from 'bcryptjs';
+// import bcrypt from 'bcryptjs';
+import { randomBytes, pbkdf2Sync, timingSafeEqual } from 'crypto';
 import dayjs from 'dayjs';
 
 
@@ -13,12 +14,24 @@ export class Helper {
   static faker = faker;
   static dayjs = dayjs;
 
-  static async hash(string: string) {
-    return bcrypt.hash(string, 10);
+  // static async hash(string: string) {
+  //   return bcrypt.hash(string, 10);
+  // }
+
+  // static async compare(original: string, existing: string): Promise<boolean> {
+  //   return bcrypt.compare(original, existing);
+  // }
+
+  static async hash(string: string): Promise<string> {
+    const salt = randomBytes(16).toString('hex');
+    const hash = pbkdf2Sync(string, salt, 10000, 64, 'sha512').toString('hex');
+    return `${salt}:${hash}`;
   }
 
   static async compare(original: string, existing: string): Promise<boolean> {
-    return bcrypt.compare(original, existing);
+    const [salt, storedHash] = existing.split(':');
+    const hash = pbkdf2Sync(original, salt, 10000, 64, 'sha512').toString('hex');
+    return timingSafeEqual(Buffer.from(hash), Buffer.from(storedHash));
   }
 
   static slugify(name: string, options?: SlugifyOptions) {

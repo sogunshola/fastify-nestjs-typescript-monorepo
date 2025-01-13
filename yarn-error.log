@@ -1,0 +1,36 @@
+Arguments: 
+  /Users/shalom/.nvm/versions/node/v20.17.0/bin/node /Users/shalom/.yarn/bin/yarn.js init
+
+PATH: 
+  /Users/shalom/.nvm/versions/node/v20.17.0/bin:/Users/shalom/.yarn/bin:/Users/shalom/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/bin:/Users/shalom/flutter/flutter/bin/
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  20.17.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/Users/shalom/.yarn/lib/cli.js:137143:13)
+      at Interface.emit (node:events:519:28)
+      at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1126:18)
+      at ReadStream.onkeypress (node:internal/readline/interface:265:20)
+      at ReadStream.emit (node:events:519:28)
+      at emitKeys (node:internal/readline/utils:371:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+      at ReadStream.emit (node:events:519:28)
+      at addChunk (node:internal/streams/readable:559:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

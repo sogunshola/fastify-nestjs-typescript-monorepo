@@ -1,0 +1,11 @@
+{
+  "name": "monorepotest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Shalom Ogunshola <shalomogunshola@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -9,7 +9,7 @@ export class CloudStorage {
 
   async uploadFile(
     filenameOrPath: string,
-    body?: Buffer | Express.Multer.File,
+    body?: Buffer | unknown,
     options?: Record<string, unknown>,
   ): Promise<string> {
     return this.storage.uploadFile(filenameOrPath, body, options);

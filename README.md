@@ -29,9 +29,10 @@ This repository demonstrates a scalable **monorepo** project using **NestJS with
 1. Clone the repository.
 2. Install dependencies: `yarn install`.
 3. Copy `.env.example` to `.env` and configure the environment variables in the `api` package.
-4. Build the project: `yarn workspaces run build`.
-4. Run database migrations: `yarn workspace @monorepo/api prisma migrate dev`.
-5. Start the development server: `yarn workspace @monorepo/api start:dev`.
+4. Generate Prisma client: `yarn workspace @monorepo/api prisma generate`.
+5. Run database migrations: `yarn workspace @monorepo/api prisma migrate dev`.
+6. Build the project: `yarn workspaces run build`.
+7. Start the development server: `yarn workspace @monorepo/api start:dev`.
 
 ## Usage
 - **API**: `http://localhost:3000/`.

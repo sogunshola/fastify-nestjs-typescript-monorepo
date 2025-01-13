@@ -1,5 +1,3 @@
-import { Express } from 'express';
-
 export interface IStorage {
   getFileUrl(filename: string): Promise<string>;
   uploadFile(

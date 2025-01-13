@@ -14,7 +14,7 @@ export class PrismaService
    * @returns {Promise<void>} A promise that resolves when the connection is successfully established.
    */
   async onModuleInit() {
-    // this.$use(excludePasswordMiddleware());
+    this.$use(excludePasswordMiddleware());
     await this.$connect();
   }
 

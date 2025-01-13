@@ -5,6 +5,10 @@ export function excludePasswordMiddleware(): Prisma.Middleware {
     // Proceed with the query and get the result
     const result = await next(params);
 
+    if (params.action === 'findUnique') {
+      return result;
+    }
+
     // Helper function to exclude password
     const excludePassword = (data: any) => {
       if (data && typeof data === 'object' && 'password' in data) {

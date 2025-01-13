@@ -22,6 +22,7 @@ export class AuthService {
       });
       const isPasswordMatch = await Helper.compare(password, user.password);
       if (user && isPasswordMatch) {
+        delete user.password;
         const payload: AuthPayload = { id: user.id };
         const token = this.jwtService.sign(payload);
         return { user, token };

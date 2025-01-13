@@ -1,8 +1,6 @@
 import slugify from 'slugify';
 import { faker } from '@faker-js/faker';
-import * as tokenGen from 'otp-generator';
-import * as bcrypt from 'bcryptjs';
-import { BadRequestException } from '@nestjs/common';
+import bcrypt from 'bcryptjs';
 import dayjs from 'dayjs';
 
 
@@ -58,16 +56,6 @@ export class Helper {
         return 0.5 - Math.random();
       })
       .join('');
-  }
-
-  static generateToken(length = 6, options: Record<string, any> = {}) {
-    return tokenGen.generate(length, {
-      digits: true,
-      upperCaseAlphabets: false,
-      specialChars: false,
-      lowerCaseAlphabets: false,
-      ...options,
-    });
   }
 
   static numberWithCommas(x: number | string): string {

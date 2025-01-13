@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "yarn workspace @monorepo/shared build",
-    "build": "npx nest build",
+    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "npm run prebuild && nest start --watch",
@@ -23,6 +23,7 @@
   "dependencies": {
     "@fastify/multipart": "^8.0.2",
     "@fastify/static": "^7.0.4",
+    "@nestjs/cli": "^10.0.0",
     "@monorepo/shared": "*",
     "@nest-lab/fastify-multer": "^1.2.0",
     "@nestjs/common": "^10.0.0",
@@ -45,7 +46,6 @@
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
-    "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
     "@types/jest": "^29.5.2",

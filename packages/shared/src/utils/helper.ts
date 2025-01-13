@@ -1,6 +1,6 @@
 import slugify from 'slugify';
 import { faker } from '@faker-js/faker';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 import dayjs from 'dayjs';
 
 
